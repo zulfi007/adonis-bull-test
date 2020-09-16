@@ -1,0 +1,41 @@
+{
+  "typescript": true,
+  "commands": [
+    "./commands",
+    "@adonisjs/core/build/commands",
+    "@adonisjs/lucid/build/commands"
+  ],
+  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "aliases": {
+    "App": "app",
+    "Contracts": "contracts",
+    "Config": "config",
+    "Database": "database"
+  },
+  "preloads": [
+    "./start/routes",
+    "./start/kernel",
+    {
+      "file": "./start/bull",
+      "environment": [
+        "web"
+      ]
+    }
+  ],
+  "providers": [
+    "./providers/AppProvider",
+    "@adonisjs/core",
+    "@adonisjs/auth",
+    "@adonisjs/lucid",
+    "@adonisjs/redis",
+    "@adonisjs/mail",
+    "@adonisjs/view",
+    "@rocketseat/adonis-bull"
+
+  ],
+  "metaFiles": [
+    ".env",
+    ".adonisrc.json",
+    "resources/views/**/*.edge"
+  ]
+}
